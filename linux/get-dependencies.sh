@@ -10,7 +10,7 @@ else
 		PKG_TYPE='aarch64.pkg.tar.xz'
 fi
 
-LLVM_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/llvm-libs-mini-$PKG_TYPE"
+LLVM_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/llvm-libs-nano-$PKG_TYPE"
 FFMPEG_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/ffmpeg-mini-$PKG_TYPE"
 QT6_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/qt6-base-iculess-$PKG_TYPE"
 LIBXML_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/libxml2-iculess-$PKG_TYPE"
@@ -36,11 +36,8 @@ pacman -Syu --noconfirm \
 		nlohmann-json \
 		patchelf \
 		python-pip \
-		qt6-5compat \
-		qt6-multimedia \
 		qt6-tools \
 		qt6-wayland \
-		quazip-qt6 \
 		sdl2 \
 		spirv-headers \
 		strace \
@@ -48,6 +45,7 @@ pacman -Syu --noconfirm \
 		vulkan-headers \
 		vulkan-mesa-layers \
 		vulkan-nouveau \
+		vulkan-radeon \
 		wget \
 		wireless_tools \
 		xcb-util-cursor \
@@ -59,7 +57,7 @@ pacman -Syu --noconfirm \
 		zsync
 
 if [ "$(uname -m)" = 'x86_64' ]; then
-		pacman -Syu --noconfirm vulkan-intel haskell-gnutls svt-av1 vulkan-radeon
+		pacman -Syu --noconfirm vulkan-intel haskell-gnutls svt-av1
 else
 		pacman -Syu --noconfirm vulkan-freedreno vulkan-panfrost
 fi
