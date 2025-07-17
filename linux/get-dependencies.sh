@@ -29,6 +29,7 @@ pacman -Syu --noconfirm \
 		fmt \
 		gamemode \
 		git \
+        glslang \
 		inetutils \
 		jq \
 		nasm \
